@@ -1,0 +1,49 @@
+object FormInstall: TFormInstall
+  Left = 738
+  Height = 118
+  Top = 153
+  Width = 350
+  BorderIcons = []
+  BorderStyle = bsSingle
+  Caption = 'Installing...'
+  ClientHeight = 118
+  ClientWidth = 350
+  Color = 4204083
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '3.0.0.3'
+  object LabelCaption: TLabel
+    Left = 16
+    Height = 32
+    Top = 8
+    Width = 111
+    Caption = 'Installing...'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clWhite
+    Font.Height = -24
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+  end
+  object LabelInfo: TLabel
+    Left = 16
+    Height = 1
+    Top = 48
+    Width = 1
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clWhite
+    Font.Height = -15
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+  end
+  object ProgressBarDownload: TProgressBar
+    Left = 16
+    Height = 20
+    Top = 80
+    Width = 320
+    Smooth = True
+    Style = pbstMarquee
+    TabOrder = 0
+  end
+end
