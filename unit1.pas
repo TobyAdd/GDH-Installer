@@ -15,13 +15,17 @@ type
     ButtonSelectPath: TButton;
     ButtonInstall: TButton;
     ButtonUninstall: TButton;
+    CheckBoxGeode: TCheckBox;
     EditPath: TEdit;
     LabelCaption: TLabel;
     LabelSelectGDPath: TLabel;
+    LabelGeode: TLabel;
     OpenDialog: TOpenDialog;
     procedure ButtonInstallClick(Sender: TObject);
     procedure ButtonSelectPathClick(Sender: TObject);
     procedure ButtonUninstallClick(Sender: TObject);
+    procedure ButtonUninstallMouseEnter(Sender: TObject);
+    procedure ButtonUninstallMouseLeave(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
 
@@ -51,7 +55,13 @@ var
 begin
   Path := EditPath.Text;
   if (Length(Path) <> 0) and FileExists(Path) then begin
+    if CheckBoxGeode.Checked and not FileExists(ExtractFilePath(Path) + '\Geode.dll') then begin
+    	MessageDlg('Error', 'Looks like Geode is not installed, make sure it is installed.', mtError, [mbOK], 0);
+      Exit;
+    end;
+
     FormInstall.GDPath := Path;
+    FormInstall.Geode := CheckBoxGeode.Checked;
 		FormInstall.ShowModal;
   end else begin
   	MessageDlg('Error', 'Invalid path. Please ensure that you have selected the Geometry Dash file', mtError, [mbOK], 0);
@@ -65,6 +75,16 @@ begin
   Path := EditPath.Text;
   if (Length(Path) <> 0) and FileExists(Path) then begin
     Path := ExtractFilePath(EditPath.Text);
+    if CheckBoxGeode.Checked then begin
+      if FileExists(Path + 'geode\mods\tobyadd.gdh.geode') then begin
+        DeleteFile(Path + 'geode\mods\tobyadd.gdh.geode');
+        MessageDlg('Inforamiton', 'GDH (Geode Mod) has been uninstalled', mtInformation, [mbOK], 0);
+      end else begin
+      	MessageDlg('Error', 'GDH (Geode) is not installed', mtError, [mbOK], 0);
+      end;
+      Exit;
+    end;
+
     if FileExists(Path + 'libExtensions.dll.bak') then begin
     	try
   			DeleteFile(Path + 'libExtensions.dll');
@@ -82,6 +102,16 @@ begin
   end else begin
   	MessageDlg('Error', 'Invalid path. Please ensure that you have selected the Geometry Dash file', mtError, [mbOK], 0);
   end;
+end;
+
+procedure TFormMain.ButtonUninstallMouseEnter(Sender: TObject);
+begin
+	LabelGeode.Caption := 'Uninstall GDH Geode version';
+end;
+
+procedure TFormMain.ButtonUninstallMouseLeave(Sender: TObject);
+begin
+  LabelGeode.Caption := 'Fake GDH as Geode extension';
 end;
 
 procedure TFormMain.FormCreate(Sender: TObject);

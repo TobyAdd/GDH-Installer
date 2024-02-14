@@ -1,12 +1,12 @@
 object FormInstall: TFormInstall
-  Left = 738
-  Height = 118
+  Left = 785
+  Height = 110
   Top = 153
   Width = 350
   BorderIcons = []
   BorderStyle = bsSingle
   Caption = 'Installing...'
-  ClientHeight = 118
+  ClientHeight = 110
   ClientWidth = 350
   Color = 4204083
   OnShow = FormShow
@@ -45,5 +45,19 @@ object FormInstall: TFormInstall
     Smooth = True
     Style = pbstMarquee
     TabOrder = 0
+  end
+  object MemoLogs: TMemo
+    Left = 16
+    Height = 248
+    Top = 120
+    Width = 320
+    Color = 6765906
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clWhite
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 1
   end
 end

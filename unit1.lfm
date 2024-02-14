@@ -1,13 +1,13 @@
 object FormMain: TFormMain
-  Left = 343
+  Left = 326
   Height = 142
-  Top = 188
-  Width = 362
+  Top = 149
+  Width = 435
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'GDH Installer'
   ClientHeight = 142
-  ClientWidth = 362
+  ClientWidth = 435
   Color = 4204083
   OnCreate = FormCreate
   Position = poScreenCenter
@@ -41,8 +41,9 @@ object FormMain: TFormMain
   object EditPath: TEdit
     Left = 16
     Height = 23
-    Top = 72
-    Width = 296
+    Top = 74
+    Width = 369
+    Anchors = [akLeft, akRight, akBottom]
     Color = 6765906
     Font.CharSet = RUSSIAN_CHARSET
     Font.Color = clWhite
@@ -53,31 +54,59 @@ object FormMain: TFormMain
     TabOrder = 0
   end
   object ButtonSelectPath: TButton
-    Left = 320
+    Left = 393
     Height = 25
     Top = 72
     Width = 35
+    Anchors = [akRight, akBottom]
     Caption = '...'
     TabOrder = 1
     OnClick = ButtonSelectPathClick
   end
-  object ButtonInstall: TButton
-    Left = 104
+  object ButtonUninstall: TButton
+    Left = 353
     Height = 25
     Top = 104
     Width = 75
+    Anchors = [akRight, akBottom]
+    Caption = 'Uninstall'
+    TabOrder = 3
+    OnClick = ButtonUninstallClick
+    OnMouseEnter = ButtonUninstallMouseEnter
+    OnMouseLeave = ButtonUninstallMouseLeave
+  end
+  object ButtonInstall: TButton
+    Left = 273
+    Height = 25
+    Top = 104
+    Width = 75
+    Anchors = [akRight, akBottom]
     Caption = 'Install'
     TabOrder = 2
     OnClick = ButtonInstallClick
   end
-  object ButtonUninstall: TButton
-    Left = 184
-    Height = 25
-    Top = 104
-    Width = 75
-    Caption = 'Uninstall'
-    TabOrder = 3
-    OnClick = ButtonUninstallClick
+  object LabelGeode: TLabel
+    Left = 35
+    Height = 15
+    Top = 106
+    Width = 156
+    Caption = 'Fake GDH as Geode extension'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clWhite
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+  end
+  object CheckBoxGeode: TCheckBox
+    Left = 16
+    Height = 17
+    Hint = 'With the recent updates, Geode has added our mod GDH to the installer blacklist.'#13#10'This made it impossible to install Geode when GDH is already installed.'#13#10'But I''m smarter than the Geode team and thanks to some tricks you can use GDH directly from Geode.'
+    Top = 105
+    Width = 178
+    AutoSize = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 4
   end
   object OpenDialog: TOpenDialog
     Title = 'Select Geometry Dash...'
