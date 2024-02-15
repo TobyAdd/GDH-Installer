@@ -1,6 +1,6 @@
 # GDH Installer
 Project that allows you to easily install GDH
 
-![изображение](https://github.com/TobyAdd/GDH-Installer/assets/66429886/2d2b54e8-3a37-4aa0-95a6-ed9e6d73bc19)
+![image](https://github.com/TobyAdd/GDH-Installer/assets/14332428/62aa1e06-715e-4ea6-8363-f756e61a0cb3)
 # Download
 https://github.com/TobyAdd/GDH-Installer/releases/latest
