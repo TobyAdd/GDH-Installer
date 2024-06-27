@@ -1,17 +1,21 @@
-object FormMain: TFormMain
-  Left = 326
-  Height = 142
-  Top = 149
-  Width = 435
+object MainForm: TMainForm
+  Left = 264
+  Height = 131
+  Top = 165
+  Width = 536
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = 'GDH Installer'
-  ClientHeight = 142
-  ClientWidth = 435
-  Color = 4204083
+  Caption = 'GDH Installer (Geode)'
+  ClientHeight = 131
+  ClientWidth = 536
+  Color = 1907483
+  Font.CharSet = RUSSIAN_CHARSET
+  Font.Color = clWhite
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '3.0.0.3'
+  LCLVersion = '3.4.0.0'
   object LabelCaption: TLabel
     Left = 16
     Height = 32
@@ -27,26 +31,27 @@ object FormMain: TFormMain
   end
   object LabelSelectGDPath: TLabel
     Left = 16
-    Height = 20
-    Top = 48
-    Width = 192
-    Caption = 'Select Geometry Dash Folder'
+    Height = 21
+    Top = 40
+    Width = 204
+    Caption = 'Select Geometry Dash Folder:'
     Font.CharSet = RUSSIAN_CHARSET
     Font.Color = clWhite
-    Font.Height = -15
+    Font.Height = -16
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
     ParentFont = False
   end
   object EditPath: TEdit
     Left = 16
-    Height = 23
-    Top = 74
-    Width = 369
-    Anchors = [akLeft, akRight, akBottom]
-    Color = 6765906
+    Height = 25
+    Top = 64
+    Width = 475
+    Anchors = [akTop, akLeft, akRight]
+    Color = 3815994
     Font.CharSet = RUSSIAN_CHARSET
     Font.Color = clWhite
+    Font.Height = -13
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
     ParentFont = False
@@ -54,64 +59,39 @@ object FormMain: TFormMain
     TabOrder = 0
   end
   object ButtonSelectPath: TButton
-    Left = 393
+    Left = 499
     Height = 25
-    Top = 72
-    Width = 35
-    Anchors = [akRight, akBottom]
+    Top = 64
+    Width = 27
+    Anchors = [akTop, akRight]
     Caption = '...'
     TabOrder = 1
     OnClick = ButtonSelectPathClick
   end
   object ButtonUninstall: TButton
-    Left = 353
+    Left = 451
     Height = 25
-    Top = 104
+    Top = 95
     Width = 75
     Anchors = [akRight, akBottom]
     Caption = 'Uninstall'
-    TabOrder = 3
+    TabOrder = 2
     OnClick = ButtonUninstallClick
-    OnMouseEnter = ButtonUninstallMouseEnter
-    OnMouseLeave = ButtonUninstallMouseLeave
   end
   object ButtonInstall: TButton
-    Left = 273
+    Left = 371
     Height = 25
-    Top = 104
+    Top = 95
     Width = 75
     Anchors = [akRight, akBottom]
     Caption = 'Install'
-    TabOrder = 2
+    TabOrder = 3
     OnClick = ButtonInstallClick
-  end
-  object LabelGeode: TLabel
-    Left = 35
-    Height = 15
-    Top = 106
-    Width = 156
-    Caption = 'Fake GDH as Geode extension'
-    Font.CharSet = RUSSIAN_CHARSET
-    Font.Color = clWhite
-    Font.Pitch = fpVariable
-    Font.Quality = fqDraft
-    ParentFont = False
-  end
-  object CheckBoxGeode: TCheckBox
-    Left = 16
-    Height = 17
-    Hint = 'With the recent updates, Geode has added our mod GDH to the installer blacklist.'#13#10'This made it impossible to install Geode when GDH is already installed.'#13#10'But I''m smarter than the Geode team and thanks to some tricks you can use GDH directly from Geode.'
-    Top = 105
-    Width = 178
-    AutoSize = False
-    ParentShowHint = False
-    ShowHint = True
-    TabOrder = 4
   end
   object OpenDialog: TOpenDialog
     Title = 'Select Geometry Dash...'
     Filter = 'Executable|*.exe|All Files|*.*'
-    Left = 273
-    Top = 11
+    Left = 384
+    Top = 8
   end
 end

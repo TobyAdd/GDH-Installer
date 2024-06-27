@@ -5,19 +5,16 @@
     <PathDelim Value="\"/>
     <General>
       <SessionStorage Value="InProjectDir"/>
-      <Title Value="GDH Installer"/>
+      <Title Value="project1"/>
       <Scaled Value="True"/>
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
       <XPManifest>
         <DpiAware Value="True"/>
         <TextName Value="TobyAdd.GDH.Installer"/>
-        <TextDesc Value="GDH Installer"/>
+        <TextDesc Value="Project that allows you to easily install GDH "/>
       </XPManifest>
       <Icon Value="0"/>
-      <Resources Count="1">
-        <Resource_0 FileName="logo.png" Type="RCDATA" ResourceName="LOGO"/>
-      </Resources>
     </General>
     <BuildModes>
       <Item Name="Default" Default="True"/>
@@ -42,8 +39,7 @@
       <Unit>
         <Filename Value="unit1.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="FormMain"/>
-        <HasResources Value="True"/>
+        <ComponentName Value="MainForm"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
       </Unit>
@@ -51,7 +47,6 @@
         <Filename Value="unit2.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormInstall"/>
-        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit2"/>
       </Unit>

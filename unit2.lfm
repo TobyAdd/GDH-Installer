@@ -1,17 +1,21 @@
 object FormInstall: TFormInstall
-  Left = 785
-  Height = 110
-  Top = 153
-  Width = 350
+  Left = 246
+  Height = 118
+  Top = 480
+  Width = 415
   BorderIcons = []
-  BorderStyle = bsSingle
+  BorderStyle = bsDialog
   Caption = 'Installing...'
-  ClientHeight = 110
-  ClientWidth = 350
-  Color = 4204083
+  ClientHeight = 118
+  ClientWidth = 415
+  Color = 1907483
+  Font.CharSet = RUSSIAN_CHARSET
+  Font.Color = clWhite
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
   OnShow = FormShow
-  Position = poMainFormCenter
-  LCLVersion = '3.0.0.3'
+  Position = poOwnerFormCenter
+  LCLVersion = '3.4.0.0'
   object LabelCaption: TLabel
     Left = 16
     Height = 32
@@ -27,12 +31,13 @@ object FormInstall: TFormInstall
   end
   object LabelInfo: TLabel
     Left = 16
-    Height = 1
+    Height = 21
     Top = 48
-    Width = 1
+    Width = 4
+    Caption = ' '
     Font.CharSet = RUSSIAN_CHARSET
     Font.Color = clWhite
-    Font.Height = -15
+    Font.Height = -16
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
     ParentFont = False
@@ -41,23 +46,8 @@ object FormInstall: TFormInstall
     Left = 16
     Height = 20
     Top = 80
-    Width = 320
-    Smooth = True
+    Width = 384
     Style = pbstMarquee
     TabOrder = 0
-  end
-  object MemoLogs: TMemo
-    Left = 16
-    Height = 248
-    Top = 120
-    Width = 320
-    Color = 6765906
-    Font.CharSet = RUSSIAN_CHARSET
-    Font.Color = clWhite
-    Font.Pitch = fpVariable
-    Font.Quality = fqDraft
-    ParentFont = False
-    ReadOnly = True
-    TabOrder = 1
   end
 end

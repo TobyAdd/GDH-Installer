@@ -17,10 +17,9 @@ uses
 
 begin
   RequireDerivedFormResource:=True;
-  Application.Title:='GDH Installer';
   Application.Scaled:=True;
   Application.Initialize;
-  Application.CreateForm(TFormMain, FormMain);
+  Application.CreateForm(TMainForm, MainForm);
   Application.CreateForm(TFormInstall, FormInstall);
   Application.Run;
 end.
