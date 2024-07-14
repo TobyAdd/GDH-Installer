@@ -5,7 +5,7 @@ unit Unit1;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Registry, Unit2;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Registry, lclintf, Unit2;
 
 type
 
@@ -74,8 +74,9 @@ begin
   Path := EditPath.Text;
   if (Length(Path) <> 0) and FileExists(Path) then begin
     if not FileExists(ExtractFilePath(Path) + '\Geode.dll') then begin
-    	MessageDlg('Error', 'Geode is not installed, make sure it is installed', mtError, [mbOK], 0);
-      Exit;
+      MessageDlg('Error', 'Geode is not installed, make sure it is installed', mtError, [mbOK], 0);
+      OpenURL('https://geode-sdk.org/');
+			Exit;
     end;
 
     FormInstall.GDPath := Path;
